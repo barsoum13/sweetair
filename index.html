@@ -10,79 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .hero {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .hero video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .hero-content {
-            z-index: 1;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .circle-button {
-            width: 60px;
-            height: 60px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            position: absolute;
-            left: 100px;
-            bottom: 100px;
-            z-index: 2;
-        }
-
-        .circle-button:hover {
-            background-color: #0056b3;
-        }
-
-        .circle-button .arrow {
-            width: 12px;
-            height: 12px;
-            border-left: 2px solid white;
-            border-bottom: 2px solid white;
-            transform: rotate(-45deg);
-        }
-    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -97,6 +24,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#methodology">Methodology</a></li>
                     <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#conclusions">Conclusions</a></li>
                     <li class="nav-item"><a class="nav-link" href="#recommendations">Recommendations</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -128,6 +56,9 @@
                     <p class="mt-3">
                         The "Sweet Air" project tackles air pollution and poor waste management in Egypt by using sugarcane bagasse—a waste material—as an air purification filter. This innovative solution aligns with Egypt's 2030 vision to reduce pollution and promote sustainability.
                     </p>
+                    <div class="infographic">
+                        <img src="infographic.jpg" alt="Infographic" class="img-fluid">
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,20 +68,43 @@
     <section id="methodology" class="py-5">
         <div class="container">
             <h2 class="text-primary fw-bold text-center mb-4">Methodology</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Materials</h3>
-                    <ul>
-                        <li>Sugarcane Bagasse</li>
-                        <li>Arduino UNO</li>
-                        <li>MQ-135 Air Quality Sensors</li>
-                        <li>Dust Sensor</li>
-                        <li>Electrical Air Pump</li>
-                        <li>LCD Screen</li>
-                    </ul>
+            <div class="accordion" id="methodologyAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Materials
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#methodologyAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Sugarcane Bagasse</li>
+                                <li>Arduino UNO</li>
+                                <li>MQ-135 Air Quality Sensors</li>
+                                <li>Dust Sensor</li>
+                                <li>Electrical Air Pump</li>
+                                <li>LCD Screen</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <img src="methdo.jpg" alt="Methodology" class="img-fluid rounded">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Process
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#methodologyAccordion">
+                        <div class="accordion-body">
+                            <p>Step-by-step explanation of the filtration process using sugarcane bagasse.</p>
+                            <ol>
+                                <li>Preparation and cleaning of sugarcane bagasse.</li>
+                                <li>Chemical treatment to remove lignin and hemicellulose.</li>
+                                <li>Physical treatment to form the filter sheet.</li>
+                                <li>Assembly of the filter system with sensors and pumps.</li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -189,14 +143,69 @@
                     </div>
                 </div>
             </div>
+            <div class="results-summary mt-4">
+                <h4>Results Summary</h4>
+                <ul>
+                    <li>Average CO₂ concentration drop: 2707.95 PPM</li>
+                    <li>Average PM10 concentration drop: 227.37 µg/m³</li>
+                    <li>Filtration achieved in under 1 minute.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusions Section -->
+    <section id="conclusions" class="py-5">
+        <div class="container text-center">
+            <h2 class="text-primary fw-bold">Conclusions</h2>
+            <p>The project effectively addressed air pollution and waste management in Egypt, utilizing sugarcane bagasse as a sustainable filter material. The results exceeded design goals, demonstrating significant pollutant reductions.</p>
+            <div class="conclusion-banner">
+                <h3>Join us in making a difference!</h3>
+                <p>Contact us for more information or to get involved.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-primary fw-bold text-center">Recommendations</h2>
+            <ul class="checklist">
+                <li>Improve sugarcane fiber filter density and arrangement.</li>
+                <li>Implement multilayer filtering for enhanced efficiency.</li>
+                <li>Regularly calibrate sensors for accurate measurements.</li>
+                <li>Explore alternative materials for filter construction.</li>
+                <li>Integrate IoT technology for real-time monitoring.</li>
+                <li>Conduct thorough testing under various conditions.</li>
+                <li>Utilize renewable energy sources for sustainability.</li>
+            </ul>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="py- ```html
+5">
         <div class="container text-center">
             <h2 class="text-primary fw-bold">Contact Us</h2>
             <p class="mt-3">Email: <a href="mailto:barsoum.2123020@stemobour.moe.edu.eg" class="text-decoration-none">barsoum.2123020@stemobour.moe.edu.eg</a></p>
+            <form id="contact-form" class="mt-4">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="3" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div class="mt-4">
+                <h5>Team Members:</h5>
+                <p>Abdullah Atef: <a href="mailto:abdullah.2123036@stemobour.moe.edu.eg">abdullah.2123036@stemobour.moe.edu.eg</a></p>
+                <p>Ans Abdeltawab: <a href="mailto:ans.2123014@stemobour.moe.edu.eg">ans.2123014@stemobour.moe.edu.eg</a></p>
+                <p>Mohamed Ibrahim: <a href="mailto:mohamed.2123048@stemobour.moe.edu.eg">mohamed.2123048@stemobour.moe.edu.eg</a></p>
+            </div>
         </div>
     </section>
 
@@ -206,10 +215,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.getElementById('learn-more-btn').addEventListener('click', function() {
-            document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
-        });
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
