@@ -1,44 +1,239 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const learnMoreBtn = document.querySelector(".circle-button");
-    const aboutSection = document.getElementById("about");
+/* General Styling */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-    learnMoreBtn.addEventListener("click", () => {
-        aboutSection.scrollIntoView({ behavior: "smooth" });
-    });
+/* Navbar Styling */
+.navbar-brand {
+    font-weight: bold;
+}
 
-    // Add interactivity for accordion in methodology
-    const accordionHeaders = document.querySelectorAll(".accordion-button");
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
 
-    accordionHeaders.forEach(header => {
-        header.addEventListener("click", (e) => {
-            const accordionContent = header.nextElementSibling;
-            if (accordionContent.classList.contains("show")) {
-                accordionContent.classList.remove("show");
-            } else {
-                document.querySelectorAll(".accordion-collapse").forEach(collapse => collapse.classList.remove("show"));
-                accordionContent.classList.add("show");
-            }
-        });
-    });
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
 
-    // Enhance cards with animation effects
-    const cards = document.querySelectorAll(".card");
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
 
-    cards.forEach(card => {
-        card.addEventListener("mouseenter", () => {
-            card.style.transform = "scale(1.05)"; // Corrected this line
-        });
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
 
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "scale(1)";
-        });
-    });
+.hero-content {
+    z-index: 1;
+    color: white;
+}
 
-    // Handle contact form submission
-    const contactForm = document.getElementById("contact-form");
-    contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        alert("Thank you for your message! We will get back to you soon.");
-        contactForm.reset();
-    });
-});
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Circle Button */
+.circle-button {
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: absolute;
+    left: 100px;
+    bottom: 100px;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.circle-button:hover {
+    background-color: #0056b3;
+}
+
+.circle-button .arrow {
+    width: 12px;
+    height: 12px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+}
+
+/* About Section */
+#about {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    color: #007bff;
+    font-weight: bold;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.infographic {
+    margin-top: 2rem;
+}
+
+/* Methodology Section */
+#methodology {
+    padding: 5rem 0;
+}
+
+#methodology h2 {
+    font-size: 2.5rem;
+    color: #007bff;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#methodology h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#methodology ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    font-size: 1.1rem;
+}
+
+/* Results Section */
+#results {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+#results h2 {
+    font-size: 2.5rem;
+    color: #007bff;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+/* Results Summary */
+.results-summary {
+    margin-top: 2rem;
+    background-color: #e9ecef;
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+/* Conclusions Section */
+.conclusion-banner {
+    background-color: #007bff;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+
+/* Recommendations Section */
+.checklist {
+    list-style-type: none;
+    padding: 0;
+}
+
+.checklist li {
+    background: url('check-icon.png') no-repeat left center;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #007bff;
+    font-weight: bold;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    #about h2, #methodology h2, #results h2, #conclusions h2, #recommendations h2, #contact h2 {
+        font-size: 2rem;
+    }
+}
