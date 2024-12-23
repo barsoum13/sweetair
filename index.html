@@ -110,49 +110,86 @@
         </div>
     </section>
 
-    <!-- Results Section -->
-    <section id="results" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-primary fw-bold text-center mb-4">Results & Analysis</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm">
-                        <img src="result1.jpg" class="card-img-top" alt="CO2 Reduction">
-                        <div class="card-body">
-                            <h3 class="card-title">85.8%</h3>
-                            <p class="card-text">CO₂ Concentration Reduction</p>
+<!-- Results Section -->
+<section id="results" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-primary fw-bold text-center mb-4">Results & Analysis</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm text-center" style="height: 250px;" onclick="showGraph('co2ConcentrationGraph')">
+                    <div class="card-body">
+                        <h5 class="card-title text-gray" style="font-size: 1rem;">CO₂ Concentration<br>Difference</h5>
+                        <p class="card-text text-primary" style="font-size: 2rem;">2707.95 PPM</p>
+                        <div class="interactive-icon" style="cursor: pointer;">
+                            <i class="fas fa-arrow-alt-circle-up" style="font-size: 1.5rem;"></i>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm">
-                        <img src="result2.jpg" class="card-img-top" alt="PM10 Efficiency">
-                        <div class="card-body">
-                            <h3 class="card-title">56.84%</h3>
-                            <p class="card-text">PM10 Efficiency</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm">
-                        <img src="result3.jpg" class="card-img-top" alt="Filtration Time">
-                        <div class="card-body">
-                            <h3 class="card-title">95 Seconds</h3>
-                            <p class="card-text">Total Filtration Time</p>
-                        </div>
-                    </div>
-                </div>
+                <img id="co2ConcentrationGraph" class="graph" src="C:\Users\barso\OneDrive\Desktop\Sweetweb\graph1.png" alt="CO₂ Concentration Graph" style="display: none; width: 100%; margin-top: 10px;">
             </div>
-            <div class="results-summary mt-4">
-                <h4>Results Summary</h4>
-                <ul>
-                    <li>Average CO₂ concentration drop: 2707.95 PPM</li>
-                    <li>Average PM10 concentration drop: 227.37 µg/m³</li>
-                    <li>Filtration achieved in under 1 minute.</li>
-                </ul>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm text-center" style="height: 250px;" onclick="showGraph('co2EfficiencyGraph')">
+                    <div class="card-body">
+                        <h5 class="card-title text-gray" style="font-size: 1rem;">CO₂ Efficiency</h5>
+                        <p class="card-text text-primary" style="font-size: 2rem;">85.8%</p>
+                        <div class="interactive-icon" style="cursor: pointer;">
+                            <i class="fas fa-arrow-alt-circle-up" style="font-size: 1.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+                <img id="co2EfficiencyGraph" class="graph" src="C:\Users\barso\OneDrive\Desktop\Sweetweb\graph2.png" alt="CO₂ Efficiency Graph" style="display: none; width: 100%; margin-top: 10px;">
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm text-center" style="height: 250px;" onclick="showGraph('pm10EfficiencyGraph')">
+                    <div class="card-body">
+                        <h5 class="card-title text-gray" style="font-size: 1rem;">PM10 Efficiency</h5>
+                        <p class="card-text text-primary" style="font-size: 2rem;">56.84%</p>
+                        <div class="interactive-icon" style="cursor: pointer;">
+                            <i class="fas fa-arrow-alt-circle-up" style="font-size: 1.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+                <img id="pm10EfficiencyGraph" class="graph" src="C:\Users\barso\OneDrive\Desktop\Sweetweb\graph3.png" alt="PM10 Efficiency Graph" style="display: none; width: 100%; margin-top: 10px;">
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm text-center" style="height: 250px;" onclick="showGraph('dustDensityGraph')">
+                    <div class="card-body">
+                        <h5 class="card-title text-gray" style="font-size: 1rem;">Dust Density<br>After Purification</h5>
+                        <p class="card-text text-primary" style="font-size: 2rem;">227.37 µg/m³</p>
+                        <div class="interactive-icon" style="cursor: pointer;">
+                            <i class="fas fa-arrow-alt-circle-up" style="font-size: 1.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+                <img id="dustDensityGraph" class="graph" src="C:\Users\barso\OneDrive\Desktop\Sweetweb\graph4.png" alt="Dust Density Graph" style="display: none; width: 100%; margin-top: 10px;">
             </div>
         </div>
-    </section>
+        <div class="results-summary mt-4">
+            <h4>Results Summary</h4>
+            <ul>
+                <li>Average CO₂ concentration drop: 2707.95 PPM</li>
+                <li>Average PM10 concentration drop:  227.37 µg/m³</li>
+                <li>Filtration achieved in under 1 minute.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Include Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- JavaScript to handle graph display -->
+<script>
+    function showGraph(graphId) {
+        const graphs = document.querySelectorAll('.graph');
+        graphs.forEach(graph => {
+            graph.style.display = 'none'; // Hide all graphs
+        });
+        const selectedGraph = document.getElementById(graphId);
+        selectedGraph.style.display = 'block'; // Show the selected graph
+    }
+</script>
+
 
     <!-- Conclusions Section -->
     <section id="conclusions" class="py-5">
@@ -182,32 +219,36 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py- ```html
-5">
-        <div class="container text-center">
-            <h2 class="text-primary fw-bold">Contact Us</h2>
-            <p class="mt-3">Email: <a href="mailto:barsoum.2123020@stemobour.moe.edu.eg" class="text-decoration-none">barsoum.2123020@stemobour.moe.edu.eg</a></p>
-            <form id="contact-form" class="mt-4">
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Your Name" required>
-                </div>
-                <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Your Email" required>
-                </div>
-                <div class="mb-3">
-                    <textarea class="form-control" rows="3" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-            <div class="mt-4">
-                <h5>Team Members:</h5>
-                <p>Abdullah Atef: <a href="mailto:abdullah.2123036@stemobour.moe.edu.eg">abdullah.2123036@stemobour.moe.edu.eg</a></p>
-                <p>Ans Abdeltawab: <a href="mailto:ans.2123014@stemobour.moe.edu.eg">ans.2123014@stemobour.moe.edu.eg</a></p>
-                <p>Mohamed Ibrahim: <a href="mailto:mohamed.2123048@stemobour.moe.edu.eg">mohamed.2123048@stemobour.moe.edu.eg</a></p>
+   <!-- Team Members Section -->
+<section id="team" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="text-primary fw-bold">Meet Our Team</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <img src="C:\Users\barso\OneDrive\Desktop\Sweetweb\barsphoto.jpg" alt="Team Member 1" class="img-fluid rounded-circle" style="width: 200px; height: 200px;" alt="Description">
+                <h5>Barsoum Mamdouh</h5>
+                <p>Email: <a href="mailto:barsoum.2123020@stemobour.moe.edu.eg
+                    ">barsoummamdouh12@gmail.com
+                </a></p>
+            </div>
+            <div class="col-md-3">
+                <img src="C:\Users\barso\OneDrive\Desktop\Sweetweb\astrosexy.jpg" class="img-fluid rounded-circle" style="width: 200px; height: 200px;" alt="Description">
+                <h5>Ans Abdeltwab</h5>
+                <p>Email: <a href="mailto:ans.2123014@stemobour.moe.edu.eg">ans.2123014@stemobour.moe.edu.eg</a></p>
+            </div>
+            <div class="col-md-3">
+                <img src="team_member3.jpg" alt="Team Member 3" class="img-fluid rounded-circle">
+                <h5>Mohamed Ibrahim</h5>
+                <p>Email: <a href="mailto:mohamed.2123048@stemobour.moe.edu.eg">mohamed.2123048@stemobour.moe.edu.eg</a></p>
+            </div>
+            <div class="col-md-3">
+                <img src="team_member4.jpg" alt="Team Member 4" class="img-fluid rounded-circle">
+                <h5>Team Member 4</h5>
+                <p>Email: <a href="mailto:team_member4@example.com">team_member4@example.com</a></p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Sweet Air Project. All rights reserved.</p>
