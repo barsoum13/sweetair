@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Air Project</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-content {
+            z-index: 1;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .circle-button {
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            position: absolute;
+            left: 100px;
+            bottom: 100px;
+            z-index: 2;
+        }
+
+        .circle-button:hover {
+            background-color: #0056b3;
+        }
+
+        .circle-button .arrow {
+            width: 12px;
+            height: 12px;
+            border-left: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Sweet Air</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#methodology">Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#recommendations">Recommendations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <video src="C:\Users\barso\OneDrive\Desktop\Sweetweb\3dvid2.mp4" autoplay loop muted></video>
+        <div class="hero-content">
+            <h1>Sweet Air</h1>
+            <p>Revolutionizing air purification with sugarcane waste</p>
+        </div>
+        <button class="circle-button" id="learn-more-btn">
+            <div class="arrow"></div>
+        </button>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="mainphoto.jpg" alt="Sweet Air Project" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="text-primary fw-bold">About the Project</h2>
+                    <p class="mt-3">
+                        The "Sweet Air" project tackles air pollution and poor waste management in Egypt by using sugarcane bagasse—a waste material—as an air purification filter. This innovative solution aligns with Egypt's 2030 vision to reduce pollution and promote sustainability.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="py-5">
+        <div class="container">
+            <h2 class="text-primary fw-bold text-center mb-4">Methodology</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Materials</h3>
+                    <ul>
+                        <li>Sugarcane Bagasse</li>
+                        <li>Arduino UNO</li>
+                        <li>MQ-135 Air Quality Sensors</li>
+                        <li>Dust Sensor</li>
+                        <li>Electrical Air Pump</li>
+                        <li>LCD Screen</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="methdo.jpg" alt="Methodology" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-primary fw-bold text-center mb-4">Results & Analysis</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm">
+                        <img src="result1.jpg" class="card-img-top" alt="CO2 Reduction">
+                        <div class="card-body">
+                            <h3 class="card-title">85.8%</h3>
+                            <p class="card-text">CO₂ Concentration Reduction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm">
+                        <img src="result2.jpg" class="card-img-top" alt="PM10 Efficiency">
+                        <div class="card-body">
+                            <h3 class="card-title">56.84%</h3>
+                            <p class="card-text">PM10 Efficiency</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm">
+                        <img src="result3.jpg" class="card-img-top" alt="Filtration Time">
+                        <div class="card-body">
+                            <h3 class="card-title">95 Seconds</h3>
+                            <p class="card-text">Total Filtration Time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2 class="text-primary fw-bold">Contact Us</h2>
+            <p class="mt-3">Email: <a href="mailto:barsoum.2123020@stemobour.moe.edu.eg" class="text-decoration-none">barsoum.2123020@stemobour.moe.edu.eg</a></p>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Sweet Air Project. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('learn-more-btn').addEventListener('click', function() {
+            document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
